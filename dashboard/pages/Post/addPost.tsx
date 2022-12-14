@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import Cards from "../../components/Accueil/cards";
+import Board from "../../components/Post/board";
 
 
 const user = {
@@ -11,10 +11,9 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Dashboard", href: "/Accueil", current: true },
-  { name: "Gestion de Post", href: "/Post", current: false },
+  { name: "Dashboard", href: "/Accueil", current: false },
+  { name: "Gestion de Post", href: "/Post", current: true },
   { name: "Gestion de Catégories", href: "/Categories", current: false },
-
 ];
 const userNavigation = [{ name: "Sign out", href: "/Auth" }];
 
@@ -22,17 +21,9 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Accueil() {
+export default function AddPosts() {
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
@@ -204,7 +195,7 @@ export default function Accueil() {
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-              Dashboard
+              Add Post
             </h1>
           </div>
         </header>
@@ -213,8 +204,7 @@ export default function Accueil() {
             {/* Replace with your content */}
             <div className="px-4 py-6 sm:px-0">
                           {/* <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" /> */}
-                          
-                          <Cards/>
+                         
             </div>
             {/* /End replace */}
           </div>

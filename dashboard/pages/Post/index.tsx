@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Board from "../../components/Post/board";
 
 const user = {
   name: "Tom Cook",
@@ -13,11 +14,7 @@ const navigation = [
   { name: "Gestion de Post", href: "/Post", current: true },
   { name: "Gestion de Catégories", href: "/Categories", current: false },
 ];
-const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
-];
+const userNavigation = [{ name: "Sign out", href: "/Auth" }];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -26,14 +23,6 @@ function classNames(...classes: string[]) {
 export default function Posts() {
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
@@ -205,7 +194,7 @@ export default function Posts() {
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-              Dashboard
+              Post
             </h1>
           </div>
         </header>
@@ -213,7 +202,8 @@ export default function Posts() {
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             {/* Replace with your content */}
             <div className="px-4 py-6 sm:px-0">
-              <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
+                          {/* <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" /> */}
+                          <Board/>
             </div>
             {/* /End replace */}
           </div>
