@@ -1,10 +1,12 @@
 import Navbar from "../../components/Navbar/navbar";
-
+import Index from "../../components/Buyers/index"
+import Footer from "../../components/Footer/footer"
 export default function Buyers() {
   return (
     <>
       <Navbar />
-      <h1>Buyers</h1>
+      <Index/>
+      <Footer/>
     </>
   );
 }
