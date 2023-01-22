@@ -6,7 +6,10 @@ import {
     ArrowTrendingUpIcon,
     Bars3Icon,
     CursorArrowRaysIcon,
-    XMarkIcon,
+  XMarkIcon,
+  AcademicCapIcon,
+    FaceSmileIcon
+
 } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Image from 'next/image'
@@ -31,6 +34,18 @@ const campaign = [
     description: "",
     href: "/campaign/sellers",
     icon: ArrowTrendingDownIcon,
+  },
+  // {
+  //   name: "Formation",
+  //   description: "",
+  //   href: "/campaign/formation",
+  //   icon: AcademicCapIcon,
+  // },
+  {
+    name: "In demand",
+    description: "",
+    href: "/campaign/yourdesire",
+    icon: FaceSmileIcon,
   },
 ];
 const resources = [
@@ -226,22 +241,6 @@ export default function Example() {
                 </>
               )}
             </Popover>
-
-            {/* Formation */}
-            <Link
-              href="/contact/contact"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
-            >
-              Formation
-            </Link>
-
-            {/* Formation */}
-            <Link
-              href="/contact/contact"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
-            >
-              Your desire
-            </Link>
             {/* What we Do? */}
             <Link
               href="#"
