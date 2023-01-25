@@ -1,13 +1,13 @@
-package com.platform.plixb;
+package com.plixb.blog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PlixbApplication {
+public class BlogApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PlixbApplication.class, args);
+		SpringApplication.run(BlogApplication.class, args);
 	}
 
 }

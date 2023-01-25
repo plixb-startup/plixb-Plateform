@@ -1,10 +1,10 @@
-package com.platform.plixb;
+package com.plixb.blog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PlixbApplicationTests {
+class BlogApplicationTests {
 
 	@Test
 	void contextLoads() {
