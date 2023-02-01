@@ -1,40 +1,38 @@
 package com.plixb.blog.controller;
 
-import com.plixb.blog.model.Article;
-import com.plixb.blog.model.Category;
+import com.plixb.blog.model.Post;
 import com.plixb.blog.repository.CategoryRepository;
-import com.plixb.blog.service.ArticleService;
+import com.plixb.blog.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/article/")
-public class ArticleController {
+public class PostController {
 
-    private final ArticleService articleService;
+    private final PostService postService;
     private final CategoryRepository categoryRepository;
 
     @Autowired
-    public ArticleController(ArticleService articleService,
-                             CategoryRepository categoryRepository) {
-        this.articleService = articleService;
+    public PostController(PostService postService,
+                          CategoryRepository categoryRepository) {
+        this.postService = postService;
         this.categoryRepository = categoryRepository;
     }
 
     @GetMapping
-    public Collection<Article> findAll() {
-        return articleService.findAll();
+    public Collection<Post> findAll() {
+        return postService.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Article> findById(@PathVariable Long id) {
-        Optional<Article> article = articleService.findById(id);
+    public ResponseEntity<Post> findById(@PathVariable Long id) {
+        Optional<Post> article = postService.findById(id);
         if(article.isPresent()) {
             return new ResponseEntity<>(article.get(), HttpStatus.OK);
         } else {
@@ -43,14 +41,14 @@ public class ArticleController {
     }
 
     @PostMapping
-    public ResponseEntity<Article> save(@RequestBody Article article, @RequestParam("categoryId") Long categoryId) {
-        Article savedArticle = articleService.save(article, categoryId);
+    public ResponseEntity<Post> save(@RequestBody Post article, @RequestParam("categoryId") Long categoryId) {
+        Post savedArticle = postService.save(article, categoryId);
         return new ResponseEntity<>(savedArticle, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id) {
-        articleService.deleteById(id);
+        postService.deleteById(id);
     }
 
 

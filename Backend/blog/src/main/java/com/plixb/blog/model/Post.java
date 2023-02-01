@@ -12,10 +12,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Article {
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
     private String title;
 
     @Column(name = "body", columnDefinition = "TEXT", nullable = false)
@@ -24,7 +24,7 @@ public class Article {
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
 

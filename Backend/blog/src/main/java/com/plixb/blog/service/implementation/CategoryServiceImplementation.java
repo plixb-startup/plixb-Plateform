@@ -2,6 +2,7 @@ package com.plixb.blog.service.implementation;
 
 import com.plixb.blog.exceptions.CategoryExistException;
 import com.plixb.blog.model.Category;
+import com.plixb.blog.payload.CategoryDto;
 import com.plixb.blog.repository.CategoryRepository;
 import com.plixb.blog.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,27 +23,29 @@ public class CategoryServiceImplementation implements CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
-    public List<Category> findAll() {
-        return categoryRepository.findAll();
+
+    @Override
+    public CategoryDto addCategory(CategoryDto categoryDto) {
+        return null;
     }
 
     @Override
-    public void deleteById(Long id) {
-        categoryRepository.deleteById(id);
+    public CategoryDto getCategory(Long categoryId) {
+        return null;
     }
 
     @Override
-    public Category update(Category category) {
-        return categoryRepository.save(category);
+    public List<CategoryDto> getAllCategories() {
+        return null;
     }
 
-    public Optional<Category> findById(Long id) {
-        return categoryRepository.findById(id);
+    @Override
+    public CategoryDto updateCategory(CategoryDto categoryDto, Long categoryId) {
+        return null;
     }
 
-    public Category save(Category category) {
+    @Override
+    public void deleteCategory(Long categoryId) {
 
-        return categoryRepository.save(category);
     }
-
 }
