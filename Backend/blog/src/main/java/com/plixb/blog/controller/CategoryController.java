@@ -1,6 +1,7 @@
 package com.plixb.blog.controller;
 
 import com.plixb.blog.model.Category;
+import com.plixb.blog.payload.CategoryDto;
 import com.plixb.blog.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,38 +23,31 @@ public class CategoryController {
     }
 
     @GetMapping
-    public List<Category> findAll() {
-        return categoryService.findAll();
+    public ResponseEntity<List<CategoryDto>> getCategories(){
+        return ResponseEntity.ok(categoryService.getAllCategories());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Category> findById(@PathVariable Long id) {
-        Optional<Category> category = categoryService.findById(id);
-        if(category.isPresent()) {
-            return new ResponseEntity<>(category.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<CategoryDto> getCategory(@PathVariable("id") Long categoryId){
+        CategoryDto categoryDto = categoryService.getCategory(categoryId);
+        return ResponseEntity.ok(categoryDto);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Category> update(@PathVariable Long id, @RequestBody Category category) {
-        Optional<Category> currentCategory = categoryService.findById(id);
-        if(currentCategory.isPresent()) {
-            currentCategory.get().setName(category.getName());
-            return new ResponseEntity<>(categoryService.save(currentCategory.get()), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto,
+                                                      @PathVariable("id") Long categoryId){
+        return ResponseEntity.ok(categoryService.updateCategory(categoryDto, categoryId));
     }
 
     @PostMapping
-    public Category save(@RequestBody Category category) {
-        return categoryService.save(category);
+    public ResponseEntity<CategoryDto> addCategory(@RequestBody CategoryDto categoryDto){
+        CategoryDto savedCategory = categoryService.addCategory(categoryDto);
+        return new ResponseEntity<>(savedCategory, HttpStatus.CREATED);
     }
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
-        categoryService.deleteById(id);
+    public ResponseEntity<String> deleteCategory(@PathVariable("id") Long categoryId){
+        categoryService.deleteCategory(categoryId);
+        return ResponseEntity.ok("Category deleted successfully!.");
     }
 
 }

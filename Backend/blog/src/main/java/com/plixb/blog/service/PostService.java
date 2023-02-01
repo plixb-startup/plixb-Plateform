@@ -21,6 +21,5 @@ public interface PostService {
 
     List<PostDto> getPostsByCategory(Long categoryId);
 
-//    List<Post> findByCategoryId(Long categoryId);
 
 }

@@ -1,6 +1,7 @@
 package com.plixb.blog.controller;
 
 import com.plixb.blog.model.Post;
+import com.plixb.blog.payload.PostDto;
 import com.plixb.blog.repository.CategoryRepository;
 import com.plixb.blog.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -25,30 +27,25 @@ public class PostController {
         this.categoryRepository = categoryRepository;
     }
 
-    @GetMapping
-    public Collection<Post> findAll() {
-        return postService.findAll();
-    }
+
 
     @GetMapping("/{id}")
-    public ResponseEntity<Post> findById(@PathVariable Long id) {
-        Optional<Post> article = postService.findById(id);
-        if(article.isPresent()) {
-            return new ResponseEntity<>(article.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<PostDto> getPostById(@PathVariable(name = "id") long id){
+        return ResponseEntity.ok(postService.getPostById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Post> save(@RequestBody Post article, @RequestParam("categoryId") Long categoryId) {
-        Post savedArticle = postService.save(article, categoryId);
-        return new ResponseEntity<>(savedArticle, HttpStatus.CREATED);
+    public ResponseEntity<PostDto> createPost(@Valid @RequestBody PostDto postDto) {
+
+        return new ResponseEntity<>(postService.createPost(postDto), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
-        postService.deleteById(id);
+    public ResponseEntity<String> deleteById(@PathVariable Long id) {
+        postService.deletePostById(id);
+
+        return new ResponseEntity<>("Post entity deleted successfully.", HttpStatus.OK);
+
     }
 
 
