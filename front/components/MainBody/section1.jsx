@@ -23,7 +23,7 @@ export default function Section1() {
               <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
                 <div className="lg:py-24">
                   <a
-                    href="/blog/home"
+                    href="/blog/main"
                     className="inline-flex items-center rounded-full bg-black p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base"
                   >
                     <span className="rounded-full bg-blue-500 px-3 py-0.5 text-sm font-semibold leading-5 text-white">

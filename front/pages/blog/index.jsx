@@ -1,4 +1,7 @@
 import Navbar from "../../components/Navbar/navbar";
+import axios from  'axios'
+import React, { useState, useEffect } from 'react'
+
 
 const posts = [
   {
@@ -57,6 +60,35 @@ const posts = [
   },
 ];
 export default function Home() {
+
+  const [post, setPost] = useState();
+  const [category, setCategory] = useState();
+
+  async function fetchPost() {
+    const response = await axios.get('http//localhost:8080/api/article/')
+    console.log(response)
+    return response.data;
+  }
+
+  async function fetchCategory() {
+    const response = await axios.get('http//localhost:8080/api/category/')
+    return response.data;
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      const post = await fetchPost();
+      const category = await fetchCategory();
+    
+      setPost(post);
+      setCategory(category);
+    }
+
+    fetchData();
+  },)
+
+
+
   return (
     <>
       <Navbar />
