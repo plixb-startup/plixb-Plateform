@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "pages/Auth/index.jsx", "pages/Auth/index.jsx", "pages/Categories/addCateg.jsx", "pages/Categories/addCateg.jsx", "pages/Categories/index.jsx", "pages/Categories/index.jsx", "pages/Post/addPost.jsx", "pages/Post/addPost.jsx", "pages/Post/index.jsx", "pages/Post/index.jsx", "components/Accueil/cards.jsx", "components/Accueil/cards.jsx", "components/Categories/board.jsx", "components/Categories/board.jsx", "components/common/deleteModal.jsx", "components/common/deleteModal.jsx", "components/common/MyModal.jsx", "components/common/MyModal.jsx", "components/Post/AddPost.jsx", "components/Post/AddPost.jsx", "components/Post/board.jsx", "components/Post/board.jsx", "pages/Accueil/index.jsx", "pages/Accueil/index.jsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
