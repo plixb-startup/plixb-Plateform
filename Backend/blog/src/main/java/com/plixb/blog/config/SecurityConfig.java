@@ -57,6 +57,7 @@ public class SecurityConfig {
                 .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests().antMatchers(
+                        HttpMethod.GET, "/api/**",
                         "/api/auth/**",
                         "/v2/api-docs",
                         "/configuration/ui",
@@ -83,9 +84,9 @@ public class SecurityConfig {
 
 //    @Bean
 //    public UserDetailsService userDetailsService(){
-//        UserDetails ramesh = User.builder()
-//                .username("ramesh")
-//                .password(passwordEncoder().encode("ramesh"))
+//        UserDetails terence = User.builder()
+//                .username("terence")
+//                .password(passwordEncoder().encode("terence"))
 //                .roles("USER")
 //                .build();
 //
@@ -94,6 +95,6 @@ public class SecurityConfig {
 //                .password(passwordEncoder().encode("admin"))
 //                .roles("ADMIN")
 //                .build();
-//        return new InMemoryUserDetailsManager(ramesh, admin);
+//        return new InMemoryUserDetailsManager(terence, admin);
 //    }
 }

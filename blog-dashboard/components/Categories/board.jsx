@@ -2,13 +2,6 @@ import AddCategories from './addCategories'
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 
-
-
-
-
-
-
-
 var date = Date.now();
 
 const post = [
@@ -95,7 +88,7 @@ export default function Board() {
                      scope="col"
                      className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
                    >
-                     <a className="group inline-flex">Modules</a>
+                     <a className="group inline-flex">Categories</a>
                    </th>
                  </tr>
                </thead>
@@ -105,7 +98,7 @@ export default function Board() {
                    category.map((categ) => (
                      <tr key={categ.id}>
                        <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                         {categ.title}
+                         {categ.name}
                        </td>
                        <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                          <button

@@ -3,6 +3,7 @@ package com.plixb.blog.service.implementation;
 import com.plixb.blog.exceptions.ResourceNotFoundException;
 import com.plixb.blog.model.Category;
 import com.plixb.blog.model.Post;
+import com.plixb.blog.payload.CategoryDto;
 import com.plixb.blog.payload.PostDto;
 import com.plixb.blog.repository.CategoryRepository;
 import com.plixb.blog.repository.PostRepository;
@@ -48,6 +49,14 @@ public class PostServiceImplementation implements PostService {
         Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
         return mapToDTO(post);
     }
+
+    @Override
+    public List<PostDto> getAllPost() {
+        List<Post> posts = postRepository.findAll();
+        return posts.stream().map((p) -> mapper.map(p, PostDto.class))
+                .collect(Collectors.toList());
+    }
+
 
     @Override
     public PostDto updatePost(PostDto postDto, long id) {
