@@ -21,6 +21,8 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 
+
+
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
@@ -57,16 +59,20 @@ public class SecurityConfig {
                 .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests().antMatchers(
-                        HttpMethod.GET, "/api/**",
-                        "/api/auth/**",
-                        "/v2/api-docs",
-                        "/configuration/ui",
-                        "/swagger-resources/**",
-                        "/configuration/security",
-                        "/swagger-ui.html",
-                        "/v3/api-docs/**",
-                        "/swagger-ui/**",
-                        "/webjars/**")
+                        //Separer le GET request avec les autres
+                        HttpMethod.GET, "/api/**").permitAll()
+                        .antMatchers(
+                "/api/auth/**",
+                "/v2/api-docs",
+                "/configuration/ui",
+                "/swagger-resources/**",
+                "/configuration/security",
+                "/swagger-ui.html",
+                "/v3/api-docs/**",
+                "/swagger-ui/**",
+                "/webjars/**"
+        )
+
                 .permitAll()
                 .anyRequest().authenticated();
 

@@ -77,7 +77,7 @@ public class AuthServiceImpl implements AuthService {
         user.setRoles(roles);
 
         userRepository.save(user);
-
+//Faire un try catch pour la vérification de la création de l'utilisateur
         return "User registered successfully";
     }
 }
