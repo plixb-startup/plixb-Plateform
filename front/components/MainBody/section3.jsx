@@ -1,7 +1,4 @@
 import {
-  BoltIcon,
-  ChatBubbleBottomCenterTextIcon,
-  EnvelopeIcon,
   GlobeAltIcon,
   ScaleIcon, ShieldCheckIcon,
   UserGroupIcon

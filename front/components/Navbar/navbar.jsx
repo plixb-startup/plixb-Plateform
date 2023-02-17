@@ -5,9 +5,7 @@ import {
     ArrowTrendingDownIcon,
     ArrowTrendingUpIcon,
     Bars3Icon,
-    CursorArrowRaysIcon,
   XMarkIcon,
-  AcademicCapIcon,
     FaceSmileIcon
 
 } from "@heroicons/react/24/outline";

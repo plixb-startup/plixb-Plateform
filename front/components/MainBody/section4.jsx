@@ -1,7 +1,4 @@
 import {
-  LifebuoyIcon,
-  NewspaperIcon,
-  PhoneIcon,
     BuildingOffice2Icon,
     ArrowPathRoundedSquareIcon
   

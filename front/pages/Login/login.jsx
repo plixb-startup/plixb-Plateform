@@ -1,6 +1,5 @@
 import Image from "next/image";
 import plixb from "../../public/assets/logo_color.png";
-import im from "../../public/assets/1.jpg";
 import Wave from "../../public/assets/Wave.svg";
 export default function Login() {
   return (

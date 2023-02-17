@@ -1,6 +1,5 @@
 import Image from "next/image";
 import plixb from "../../public/assets/logo_color.png";
-import im from "../../public/assets/1.jpg"
 import Polygon from "../../public/assets/Curve.svg";
 export default function Register() {
   return (

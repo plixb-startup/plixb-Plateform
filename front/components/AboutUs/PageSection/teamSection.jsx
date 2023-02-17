@@ -1,7 +1,7 @@
 
 
 
-import Image from "next/image";
+
 import Francsisco from "../../../public/assets/Francsico.jpeg";
 
 

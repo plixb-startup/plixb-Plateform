@@ -1,7 +1,6 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import Reveal from "react-awesome-reveal"
 import Image from "next/image";
-import World from "../../../public/assets/WorldMap.svg"
 import Polygon from "../../../public/assets/Polygons.svg";
 export default function HeroSection() {
   return (

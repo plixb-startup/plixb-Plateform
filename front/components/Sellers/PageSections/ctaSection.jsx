@@ -1,7 +1,4 @@
 
-
-
-
 export default function CtaSection() {
   return (
     <div className="bg-blue-100">

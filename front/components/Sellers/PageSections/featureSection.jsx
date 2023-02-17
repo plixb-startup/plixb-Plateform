@@ -1,5 +1,4 @@
-import { CheckIcon } from "@heroicons/react/24/outline";
-import { Chrono } from "react-chrono";
+
 import TimeLine from "../timeLine";
 
 const features = [
