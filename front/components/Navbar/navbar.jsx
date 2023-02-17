@@ -23,12 +23,12 @@ const campaign = [
     href: "/campaign/buyers",
     icon: ArrowTrendingUpIcon,
   },
-  {
-    name: "Crowdfunding",
-    description: "",
-    href: "/campaign/crowdfunding",
-    icon: CursorArrowRaysIcon,
-  },
+  // {
+  //   name: "Crowdfunding",
+  //   description: "",
+  //   href: "/campaign/crowdfunding",
+  //   icon: CursorArrowRaysIcon,
+  // },
   {
     name: "Sellers",
     description: "",
@@ -183,13 +183,13 @@ export default function Example() {
 
             {/* Partners */}
             <Link
-              href="#"
+              href="/Partners/"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Partners
             </Link>
 
-            <Popover className="relative">
+            {/* <Popover className="relative">
               {({ open }) => (
                 <>
                   <Popover.Button
@@ -240,7 +240,7 @@ export default function Example() {
                   </Transition>
                 </>
               )}
-            </Popover>
+            </Popover> */}
             {/* What we Do? */}
             <Link
               href="/aboutUs/"
@@ -250,7 +250,7 @@ export default function Example() {
             </Link>
             {/* Contact */}
             <Link
-              href="/contact/contact"
+              href="/contact/"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Contact
@@ -260,13 +260,13 @@ export default function Example() {
           {/* Authentication and registration  */}
           <div className="flex items-center md:ml-12">
             <Link
-              href="#"
+              href="/Login/login"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Sign in
             </Link>
             <a
-              href="#"
+              href="/Register/register"
               className="ml-8 inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700"
             >
               Sign up
@@ -359,7 +359,7 @@ export default function Example() {
               </div>
               <div className="mt-6">
                 <Link
-                  href="#"
+                  href="/Register/register"
                   className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700"
                 >
                   Sign up
@@ -367,7 +367,7 @@ export default function Example() {
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Existing customer?{" "}
                   <Link
-                    href="#"
+                    href="/Login/login"
                     className="text-blue-600 hover:text-blue-500"
                   >
                     Sign in

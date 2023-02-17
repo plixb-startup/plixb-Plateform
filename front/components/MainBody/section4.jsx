@@ -10,14 +10,14 @@ import {
 const supportLinks = [
   {
     name: "Selling stocks",
-    href: "/contact/contact",
+    href: "/contact/",
     description:
       "Plixb allows all startup shareholders founders, employees, business angels to sell all or part of their shares.",
     icon: ArrowPathRoundedSquareIcon,
   },
   {
     name: "Invest in a startup",
-    href: "/contact/contact",
+    href: "/contact/",
     description:
       "Plixb gives the opportunity to any investor to enter the capital of startups",
     icon: BuildingOffice2Icon,
