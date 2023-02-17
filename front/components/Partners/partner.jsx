@@ -1,6 +1,6 @@
 import ComingSoon from "../ComingSoon";
 
-export default function Index() {
+export default function Partners() {
   return (
     <>
       <ComingSoon/>

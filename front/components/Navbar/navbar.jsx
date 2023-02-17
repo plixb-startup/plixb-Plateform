@@ -285,7 +285,7 @@ export default function Example() {
       >
         <Popover.Panel
           focus
-          className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+          className="relative inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
         >
           <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-5 pt-5 pb-6">
@@ -333,19 +333,19 @@ export default function Example() {
                 </Link>
 
                 <Link
-                  href="#"
+                  href="/contact/"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
                   Contact
                 </Link>
 
-                <Link
+                {/* <Link
                   href="#"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
                   Enterprise
-                </Link>
-                {resources.map((item) => (
+                </Link> */}
+                {/* {resources.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
@@ -353,19 +353,18 @@ export default function Example() {
                   >
                     {item.name}
                   </Link>
-                ))}
+                ))} */}
               </div>
               <div className="mt-6">
                 <Link
-                  href="/Register/register"
+                  href="/Register/"
                   className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700"
                 >
                   Sign up
                 </Link>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Existing customer?{" "}
                   <Link
-                    href="/Login/login"
+                    href="/Login/"
                     className="text-blue-600 hover:text-blue-500"
                   >
                     Sign in

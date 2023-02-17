@@ -3,17 +3,17 @@ import Image from "next/image";
 import Plixb from "../../public/assets/logo_color.png";
 const navigation = {
   about: [
-    { name: "What We Do?", href: "#" },
-    { name: "Trust & Safety", href: "#" },
-    { name: "How It Works", href: "#" },
+    { name: "What We Do?", href: "/aboutUs/" },
+    // { name: "Trust & Safety", href: "#" },
+    // { name: "How It Works", href: "#" },
   ],
   support: [
-    { name: "Contact", href: "#" },
+    { name: "Contact", href: "/contact" },
   ],
   plixb: [
-    { name: "News", href: "#" },
-    { name: "Partners", href: "#" },
-    { name: "Fees", href: "#" },
+    { name: "News", href: "/blog/" },
+    { name: "Partners", href: "/Partners/" },
+ 
   ],
   legal: [
     { name: "Claim", href: "#" },

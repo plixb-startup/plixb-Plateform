@@ -1,12 +1,12 @@
 import Image from "next/image";
 import plixb from "../../public/assets/logo_color.png";
-import Polygon from "../../public/assets/Curve.svg";
-export default function Register() {
+import Wave from "../../public/assets/Wave.svg";
+export default function Login() {
   return (
     <>
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <Image
-          src={Polygon}
+          src={Wave}
           className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
           aria-hidden="true"
         />
@@ -22,11 +22,10 @@ export default function Register() {
           </a>
 
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            Welcome👋
+            Connexion
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Create your account to invest in the startups of the moment or
-            (re)sell shares.
+            Hello ! Access your account below.
             <a
               href="#"
               className="font-medium text-blue-600 hover:text-blue-500"
@@ -97,7 +96,7 @@ export default function Register() {
                   type="submit"
                   className="flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
-                  Create an Account
+                  Login
                 </button>
               </div>
             </form>
@@ -107,23 +106,16 @@ export default function Register() {
                 <div className="absolute inset-0 flex items-center">
                   <div className="w-full border-t border-gray-300" />
                 </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="bg-white px-2 text-xs text-gray-500">
-                    By clicking on the Create my account button, you accept the
-                    Terms of Use and the Privacy Policy of PLIXB.
-                  </span>
-                </div>
               </div>
               <br></br>
-              <hr />
               <div className="mt-6 grid grid-cols-1 gap-3">
                 <div>
                   <div className="relative flex justify-center">
                     <span className="bg-white text-xm text-gray-500">
-                      Already Member?
-                      <a href="/Login/login">
+                      Not member yet?
+                      <a href="/Register/">
                         <span className="ml-2 text-blue-500 font-bold">
-                          Login now
+                          Register Now
                         </span>
                       </a>
                     </span>
